@@ -1,0 +1,10 @@
+.header{
+    background:rgb(108,104,98);
+}
+.nav-link h5{
+    padding-right: 15px;
+    color:white;
+}
+.btn{
+    background-color: rgb(0,141,128) !important;
+}
