@@ -1,0 +1,11 @@
+.added-page{
+    text-align: center;
+    margin-top: 40px;
+    font-family: sans-serif;
+}
+.added-page h1{
+    color: rgb(13,202,240);
+}
+.delete-btn{
+    border:none;
+}

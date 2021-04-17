@@ -10,11 +10,11 @@ const Navbar = () => {
   return (
     <div className="header">
       <div>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
+        <nav className="navbar navbar-expand-lg navbar-light">
+            <div className="container-fluid">
                 <img src={logo} alt=""/>
             </div>
-          <div class="nav-link container-fluid justify-content-end">
+          <div className="nav-link container-fluid justify-content-end">
             <h5>Home</h5>
             <h5>Dashboard</h5>
             <h5>Blog</h5>

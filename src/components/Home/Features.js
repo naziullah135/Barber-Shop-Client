@@ -5,41 +5,41 @@ import './Features.css';
 const Features = () => {
     return (
         <section id="feature">
-        <div class="title-text">
+        <div className="title-text">
             <p>FEATURES</p>
             <h1>Why Choose Us</h1>
         </div>
-        <div class="feature-box">
-            <div class="features">
+        <div className="feature-box">
+            <div className="features">
                 <h1>Experienced Staff</h1>
-                <div class="features-des">
-                    <div class="features-icon">
-                        <i class="fa fa-shield"></i>
+                <div className="features-des">
+                    <div className="features-icon">
+                        <i className="fa fa-shield"></i>
                     </div>
-                    <div class="features-text">
+                    <div className="features-text">
                         <p>Donec eget ultaricies sapi. Sad porttitor,maruis ater lob facilisis, elite sapie eleifend lingula.</p>
                     </div>
                 </div>
                 <h1>Pre-Booking Online</h1>
-                <div class="features-des">
-                    <div class="features-icon">
-                        <i class="fa fa-check-square-o"></i>
+                <div className="features-des">
+                    <div className="features-icon">
+                        <i className="fa fa-check-square-o"></i>
                     </div>
-                    <div class="features-text">
+                    <div className="features-text">
                         <p>Donec eget ultaricies sapi. Sad porttitor,maruis ater lob facilisis, elite sapie eleifend lingula.</p>
                     </div>
                 </div>
                 <h1>Affordable Cost</h1>
-                <div class="features-des">
-                    <div class="features-icon">
-                        <i class="fa fa-inr"></i>
+                <div className="features-des">
+                    <div className="features-icon">
+                        <i className="fa fa-inr"></i>
                     </div>
-                    <div class="features-text">
+                    <div className="features-text">
                         <p>Donec eget ultaricies sapi. Sad porttitor,maruis ater lob facilisis, elite sapie eleifend lingula.</p>
                     </div>
                 </div>
             </div>
-            <div class="features-img">
+            <div className="features-img">
                 <img src={barber} />
             </div>
         </div>
