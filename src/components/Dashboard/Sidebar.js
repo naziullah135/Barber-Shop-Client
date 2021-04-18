@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCog,
   faSignOutAlt,
-  faCalendar,
   faHome,
   faGripHorizontal,
   faUserPlus,
+  faShoppingCart,
   faUsers,
   faEdit
 } from "@fortawesome/free-solid-svg-icons";
@@ -36,13 +36,18 @@ const Sidebar = () => {
     >
       <ul className="list-unstyled">
         <li>
-          <Link to="/" className="text-white">
+          <Link to="/dashboard" className="text-white">
             <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
           </Link>
         </li>
         <li>
           <Link to="/" className="text-white">
             <FontAwesomeIcon icon={faHome} /> <span>Home</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/book" className="text-white">
+            <FontAwesomeIcon icon={faShoppingCart} /> <span>Book</span>
           </Link>
         </li>
         <li>
