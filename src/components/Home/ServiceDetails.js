@@ -2,7 +2,7 @@ import React from "react";
 
 const ServiceDetails = ({service}) => {
   return (
-    <div className="single-service">
+    <div className=" d-flex single-service">
       <img src={service.imageURL} />
       <div className="overlay"></div>
       <div className="service-desc">
@@ -12,6 +12,7 @@ const ServiceDetails = ({service}) => {
           this is test under description of barber foundation this is test under
           description of barber foundation.
         </p>
+        <h3>Cost: {service.price}</h3>
       </div>
     </div>
   );

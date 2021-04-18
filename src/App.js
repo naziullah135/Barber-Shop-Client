@@ -9,6 +9,7 @@ import NotFound from "./components/NotFound/NotFound";
 import PrivateRoute from './components/Login/PrivateRoute';
 import Dashboard from './components/Dashboard/Dashboard';
 import AddService from './components/Dashboard/AddService';
+import AddReview from './components/Dashboard/AddReview';
 
 export const UserContext = createContext();
 
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/addservice">
           <AddService />
+        </Route>
+        <Route path="/addreview">
+          <AddReview />
         </Route>
         <Route path="/login">
           <Login />

@@ -10,6 +10,7 @@ import {
   faGripHorizontal,
   faUserPlus,
   faUsers,
+  faEdit
 } from "@fortawesome/free-solid-svg-icons";
 import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
 import { UserContext } from "../../App";
@@ -47,6 +48,11 @@ const Sidebar = () => {
         <li>
           <Link to="/addservice" className="text-white">
             <FontAwesomeIcon icon={faUserPlus} /> <span>Add Service</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/addreview" className="text-white">
+            <FontAwesomeIcon icon={faEdit} /> <span>Add Review</span>
           </Link>
         </li>
         {/* {isDoctor && <div>

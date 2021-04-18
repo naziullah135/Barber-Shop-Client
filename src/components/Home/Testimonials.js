@@ -1,29 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Testimonials.css';
-import img1 from '../../images/img-1.jpg';
-import img2 from '../../images/img-2.jpg';
-import img3 from '../../images/img-3.jpg';
 import TestimonialDetails from './TestimonialDetails';
 
-const testimonialData = [
-    {
-        name: 'Ken Norman',
-        img: img1,
-        userName: '@kennorman',
-    },
-    {
-        name: 'Liara Karian',
-        img: img2,
-        userName: '@Liarakarian',
-    },
-    {
-        name: 'Ken Norman',
-        img: img3,
-        userName: '@rickydania',
-    },
-]
-
 const Testimonials = () => {
+    const [testimonials, setTestimonials] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/reviews")
+          .then((res) => res.json())
+          .then((data) => setTestimonials(data));
+      }, []);
     return (
         <section id="testimonial">
             <div className="title-text">
@@ -32,7 +18,7 @@ const Testimonials = () => {
             </div>
             <div className="testimonial-row">
                 {
-                    testimonialData.map(testimonial => <TestimonialDetails testimonial={testimonial}></TestimonialDetails>)
+                    testimonials.map(testimonial => <TestimonialDetails testimonial={testimonial}></TestimonialDetails>)
                 }
             </div>
 
