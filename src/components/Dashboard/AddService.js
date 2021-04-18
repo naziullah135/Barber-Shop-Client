@@ -14,7 +14,7 @@ const AddService = () => {
       price: data.price,
       imageURL: imageURL,
     };
-    const url = `http://localhost:5000/addService`;
+    const url = `https://peaceful-journey-87547.herokuapp.com/addService`;
     console.log(serviceData);
     fetch(url, {
       method: "POST",

@@ -15,7 +15,7 @@ const AddReview = () => {
       review: data.review,
       imageURL: imageURL,
     };
-    const url = `http://localhost:5000/addReview`;
+    const url = `https://peaceful-journey-87547.herokuapp.com/addReview`;
     console.log(reviewData);
     fetch(url, {
       method: "POST",

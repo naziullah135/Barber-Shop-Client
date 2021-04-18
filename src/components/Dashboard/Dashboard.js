@@ -1,4 +1,5 @@
 import React from 'react';
+import Book from './Book';
 import Sidebar from './Sidebar';
 
 const Dashboard = () => {
@@ -8,7 +9,7 @@ const Dashboard = () => {
                     <Sidebar></Sidebar>
             </div>
             <div className="col-md-10">
-                <h1>This is dashboard</h1>
+                <Book />
             </div>
             
         </div>

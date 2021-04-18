@@ -5,6 +5,7 @@ import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 import LoginBg from '../../images/LoginBg.jpg';
+import GoogleIcon from '../../images/GoogleIcon.png';
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -56,7 +57,7 @@ const Login = () => {
             <label htmlFor="" className="text-danger">Forgot your password?</label>
           </div>
           <div className="from-group mt-5">
-            <button className="btn btn-brand text-white" onClick={handleGoogleSignIn}>Google Sign in</button>
+            <button className="btn btn-brand text-white" style={{width:'470px'}} onClick={handleGoogleSignIn}> <img src={GoogleIcon} style={{width:'5%'}} alt=""/> &nbsp; Google Sign in</button>
           </div>
         </div>
         <div className="col-md-6 d-none d-md-block">

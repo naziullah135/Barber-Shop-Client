@@ -7,7 +7,7 @@ const Services = () => {
     const [services,setServices] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://peaceful-journey-87547.herokuapp.com/services")
           .then((res) => res.json())
           .then((data) => setServices(data));
       }, []);
@@ -18,13 +18,11 @@ const Services = () => {
             <h1>We Provide Better</h1>
         </div>
        
-            <Link to="/login">
             <div className="service-box">
             {
                 services.map(service =><ServiceDetails service={service}></ServiceDetails>)
             }
              </div>
-            </Link>
        
     </section>
     );
