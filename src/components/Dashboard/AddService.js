@@ -40,9 +40,11 @@ const AddService = () => {
       });
   };
   return (
-    <div className="d-flex">
-        <Sidebar />
-      <div className="added-page m-5 pl-5">
+    <div className="row">
+       <div className="col-md-3">
+       <Sidebar />
+       </div>
+      <div className="added-page col-md-9">
         <h1>Add Service</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="">

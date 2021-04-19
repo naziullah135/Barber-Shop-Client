@@ -41,9 +41,11 @@ const AddReview = () => {
       });
   };
   return (
-    <div className="d-flex">
+    <div className="row">
+        <div className="col-md-3">
         <Sidebar />
-      <div className="added-page m-5 pl-5">
+        </div>
+      <div className="added-page col-md-9">
         <h1>Add Review</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="">

@@ -32,7 +32,7 @@ const Book = () => {
       });
   };
   return (
-    <div className="m-5">
+    <div>
       <h1 className="pl-4">Book</h1>
       <div className="Book bg-light p-4">
         <form action="">

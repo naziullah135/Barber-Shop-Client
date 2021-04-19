@@ -11,12 +11,16 @@ const Orders = () => {
       .then((data) => setOrders(data));
   }, []);
   return (
-    <div className="d-flex">
+    <div className="row">
+          <div className="col-md-3">
           <Sidebar></Sidebar>
-        <div className="row m-5">
-        {
+          </div>
+        <div className="col-md-9 mt-5">
+       <div className="row">
+       {
             orders.map(order => <OrderDetails order={order}></OrderDetails>)
         }
+       </div>
         </div>
     </div>
   );
