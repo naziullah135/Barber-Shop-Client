@@ -31,7 +31,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className="sidebar d-flex flex-column justify-content-between py-5 px-4"
+      className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4"
       style={{ height: "100vh" }}
     >
       <ul className="list-unstyled">
@@ -63,6 +63,11 @@ const Sidebar = () => {
         <li>
           <Link to="/orders" className="text-white">
             <FontAwesomeIcon icon={faEdit} /> <span>Orders</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/manageservices" className="text-white">
+            <FontAwesomeIcon icon={faGripHorizontal} /> <span>Manage Sevices</span>
           </Link>
         </li>
         {/* {isDoctor && <div>
