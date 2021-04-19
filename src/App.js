@@ -11,6 +11,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import AddService from './components/Dashboard/AddService';
 import AddReview from './components/Dashboard/AddReview';
 import Book from './components/Dashboard/Book';
+import Orders from './components/Dashboard/Orders';
 
 export const UserContext = createContext();
 
@@ -29,6 +30,9 @@ function App() {
         <PrivateRoute path="/dashboard/:id">
           <Dashboard />
         </PrivateRoute>
+        <PrivateRoute path="/dashboard">
+          <Dashboard />
+        </PrivateRoute>
         <Route path="/addservice">
           <AddService />
         </Route>
@@ -37,6 +41,9 @@ function App() {
         </Route>
         <Route path="/addreview">
           <AddReview />
+        </Route>
+        <Route path="/orders">
+          <Orders />
         </Route>
         <Route path="/login">
           <Login />

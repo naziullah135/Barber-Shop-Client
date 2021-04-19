@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Services = () => {
     const [services,setServices] = useState([]);
+    const{name,_id} = services;
 
     useEffect(() => {
         fetch("https://peaceful-journey-87547.herokuapp.com/services")
@@ -17,13 +18,11 @@ const Services = () => {
             <p>SERVICES</p>
             <h1>We Provide Better</h1>
         </div>
-       
             <div className="service-box">
             {
                 services.map(service =><ServiceDetails service={service}></ServiceDetails>)
             }
-             </div>
-       
+            </div>
     </section>
     );
 };

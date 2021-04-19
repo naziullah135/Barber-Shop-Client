@@ -18,7 +18,7 @@ const ServiceDetails = (props) => {
         <h3>Cost: {price}</h3>
       </div>
     </div>
-    </Link>
+   </Link>
   );
 };
 

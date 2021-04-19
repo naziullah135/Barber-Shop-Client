@@ -60,6 +60,11 @@ const Sidebar = () => {
             <FontAwesomeIcon icon={faEdit} /> <span>Add Review</span>
           </Link>
         </li>
+        <li>
+          <Link to="/orders" className="text-white">
+            <FontAwesomeIcon icon={faEdit} /> <span>Orders</span>
+          </Link>
+        </li>
         {/* {isDoctor && <div>
                     <li>
                         <Link to="/" className="text-white">
