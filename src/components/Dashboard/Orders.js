@@ -12,16 +12,24 @@ const Orders = () => {
   }, []);
   return (
     <div className="row">
-          <div className="col-md-3">
-          <Sidebar></Sidebar>
-          </div>
-        <div className="col-md-9 mt-5">
-       <div className="row">
-       {
-            orders.map(order => <OrderDetails order={order}></OrderDetails>)
-        }
-       </div>
-        </div>
+      <div className="col-md-3">
+        <Sidebar />
+      </div>
+      <div className="col-md-9 mt-5">
+        <h2>Orders List</h2>
+        <br />
+        <table style={{ width: "900px" }}>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Service Name</th>
+            <th>Price</th>
+          </tr>
+          {orders.map((order) => (
+            <OrderDetails order={order}></OrderDetails>
+          ))}
+        </table>
+      </div>
     </div>
   );
 };

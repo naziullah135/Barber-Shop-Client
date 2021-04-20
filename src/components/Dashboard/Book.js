@@ -17,7 +17,12 @@ const Book = () => {
   }, []);
 
   const submitOrder = () => {
-    const newOrder = { ...loggedInUser,name:service.name,price:service.price,image:service.imageURL};
+    const newOrder = {
+      ...loggedInUser,
+      serviceName: service.name,
+      price: service.price,
+      image: service.imageURL,
+    };
     console.log(newOrder);
     fetch("https://peaceful-journey-87547.herokuapp.com/orders", {
       method: "POST",
@@ -29,7 +34,7 @@ const Book = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert('Your order is successful.');
+        alert("Your order is successful.");
       });
   };
   return (
@@ -65,15 +70,17 @@ const Book = () => {
             value={service.price}
           ></input>
         </form>
-        <br/>
+        <br />
         <div className="data-field">
           <h5 className="text-secondary">Pay with credit card</h5>
-          <br/>
+          <br />
           <Payment></Payment>
-          <br/>
+          <br />
         </div>
-        <div  className="d-flex justify-content-end data-field">
-        <button onClick={submitOrder} className="btn btn-brand text-white">Order Now</button>
+        <div className="d-flex justify-content-end data-field">
+          <button onClick={submitOrder} className="btn btn-brand text-white">
+            Order Now
+          </button>
         </div>
       </div>
     </div>
