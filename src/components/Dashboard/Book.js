@@ -17,7 +17,8 @@ const Book = () => {
   }, []);
 
   const submitOrder = () => {
-    const newOrder = { ...loggedInUser, ...service};
+    const newOrder = { ...loggedInUser,name:service.name,price:service.price,image:service.imageURL};
+    console.log(newOrder);
     fetch("https://peaceful-journey-87547.herokuapp.com/orders", {
       method: "POST",
       headers: {

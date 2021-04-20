@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const adminData = {
       email: data.email,
     };
-    const url = `http://localhost:5000/admin`;
+    const url = `https://peaceful-journey-87547.herokuapp.com/admin`;
     console.log(adminData);
     fetch(url, {
       method: "POST",
@@ -28,11 +28,11 @@ const MakeAdmin = () => {
       <div className="col-md-3">
         <Sidebar></Sidebar>
       </div>
-      <div className="col-md-9">
+      <div className="col-md-9 mt-5">
         <h1>Make Admin</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="">
-            <h5 className="text-center">Email</h5>
+            <h5>Email</h5>
           </label>
           <br />
           <input

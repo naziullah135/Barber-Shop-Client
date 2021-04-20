@@ -6,7 +6,7 @@ const OrderDetails = ({order}) => {
             <div className="card mb-3" style={{maxWidth:"450px"}}>
             <div className="row">
               <div className="col-md-5">
-                <img style={{width:'100%',height:'100%'}} src={order.imageURL} alt="..." />
+                <img style={{width:'100%',height:'100%'}} src={order.image} alt="..." />
               </div>
               <div className="col-md-7">
                 <div className="card-body">
