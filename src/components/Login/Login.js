@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from './firebase.config';
-import { UserContext } from '../../App';
-import { useHistory, useLocation } from 'react-router-dom';
-import LoginBg from '../../images/LoginBg.jpg';
-import GoogleIcon from '../../images/GoogleIcon.png';
+import firebaseConfig from "./firebase.config";
+import { UserContext } from "../../App";
+import { useHistory, useLocation } from "react-router-dom";
+import LoginBg from "../../images/LoginBg.jpg";
+import GoogleIcon from "../../images/GoogleIcon.png";
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -19,27 +19,21 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-      const { displayName, email } = result.user;
-      const signedInUser = { name: displayName, email }
-      setLoggedInUser(signedInUser);
-      storeAuthToken();
-      console.log(signedInUser);
-    }).catch(function (error) {
-      const errorMessage = error.message;
-      console.log(errorMessage);
-    });
-  }
-
-  const storeAuthToken = () => {
-    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
-      .then(function (idToken) {
-        sessionStorage.setItem('token', idToken);
-        history.replace(from);
-      }).catch(function (error) {
-        // Handle error
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(function (result) {
+        const { displayName, email } = result.user;
+        const signedInUser = { name: displayName, email };
+        setLoggedInUser(signedInUser);
+        history.push("/dashboard");
+        // history.replace(from);
+      })
+      .catch(function (error) {
+        const errorMessage = error.message;
+        console.log(errorMessage);
       });
-  }
+  };
 
   return (
     <div className="login-page container">
@@ -54,14 +48,29 @@ const Login = () => {
             <input type="password" className="form-control" />
           </div>
           <div className="form-group">
-            <label htmlFor="" className="text-danger">Forgot your password?</label>
+            <label htmlFor="" className="text-danger">
+              Forgot your password?
+            </label>
           </div>
           <div className="from-group mt-5">
-            <button className="btn btn-brand text-white" style={{width:'470px'}} onClick={handleGoogleSignIn}> <img src={GoogleIcon} style={{width:'5%'}} alt=""/> &nbsp; Google Sign in</button>
+            <button
+              className="btn btn-brand text-white"
+              style={{ width: "470px" }}
+              onClick={handleGoogleSignIn}
+            >
+              {" "}
+              <img src={GoogleIcon} style={{ width: "5%" }} alt="" /> &nbsp;
+              Google Sign in
+            </button>
           </div>
         </div>
         <div className="col-md-6 d-none d-md-block">
-          <img style={{width:"70%",borderRadius:'15px',margin:'80px'}} className="img-fluid" src={LoginBg} alt="" />
+          <img
+            style={{ width: "70%", borderRadius: "15px", margin: "80px" }}
+            className="img-fluid"
+            src={LoginBg}
+            alt=""
+          />
         </div>
       </div>
     </div>
