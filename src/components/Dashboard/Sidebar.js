@@ -42,13 +42,13 @@ const Sidebar = () => {
             <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
           </Link>
         </li>
+        <li>
+          <Link to="/" className="text-white">
+            <FontAwesomeIcon icon={faHome} /> <span>Home</span>
+          </Link>
+        </li>
         {!isAdmin && (
           <>
-            <li>
-              <Link to="/" className="text-white">
-                <FontAwesomeIcon icon={faHome} /> <span>Home</span>
-              </Link>
-            </li>
             <li>
               <Link to="/book" className="text-white">
                 <FontAwesomeIcon icon={faShoppingCart} /> <span>Book</span>
