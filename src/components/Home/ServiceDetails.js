@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const ServiceDetails = (props) => {
   const {name,imageURL,price,_id} = props.service;
   return (
-    <Link to={`/dashboard/${_id}`}>
-      <div className=" d-flex single-service">
+    <div className="d-flex single-service">
+    <Link className="text-white" to={`/dashboard/${_id}`}> 
       <img src={imageURL} />
       <div className="overlay"></div>
       <div className="service-desc">
@@ -17,8 +17,8 @@ const ServiceDetails = (props) => {
         </p>
         <h3>Cost: {price}</h3>
       </div>
-    </div>
    </Link>
+   </div>
   );
 };
 

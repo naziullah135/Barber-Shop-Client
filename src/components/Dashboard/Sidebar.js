@@ -10,24 +10,25 @@ import {
   faUserPlus,
   faShoppingCart,
   faUsers,
-  faEdit
+  faEdit,
+  faPlus
 } from "@fortawesome/free-solid-svg-icons";
 import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
 import { UserContext } from "../../App";
 
 const Sidebar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  // const [isDoctor, setIsDoctor] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
-  // useEffect(() => {
-  //     fetch('https://salty-plateau-71286.herokuapp.com/isDoctor', {
-  //         method: 'POST',
-  //         headers: { 'content-type': 'application/json' },
-  //         body: JSON.stringify({ email: loggedInUser.email })
-  //     })
-  //         .then(res => res.json())
-  //         .then(data => setIsDoctor(data));
-  // }, [])
+  useEffect(() => {
+      fetch('https://salty-plateau-71286.herokuapp.com/isAdmin', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email: loggedInUser.email })
+      })
+          .then(res => res.json())
+          .then(data => setIsAdmin(data));
+  }, [loggedInUser])
 
   return (
     <div
@@ -51,13 +52,20 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
+          <Link to="/addreview" className="text-white">
+            <FontAwesomeIcon icon={faEdit} /> <span>Add Review</span>
+          </Link>
+        </li>
+        {
+          isAdmin && <>
+          <li>
           <Link to="/addservice" className="text-white">
-            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Service</span>
+            <FontAwesomeIcon icon={faPlus} /> <span>Add Service</span>
           </Link>
         </li>
         <li>
-          <Link to="/addreview" className="text-white">
-            <FontAwesomeIcon icon={faEdit} /> <span>Add Review</span>
+          <Link to="/addadmin" className="text-white">
+            <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
           </Link>
         </li>
         <li>
@@ -69,35 +77,9 @@ const Sidebar = () => {
           <Link to="/manageservices" className="text-white">
             <FontAwesomeIcon icon={faGripHorizontal} /> <span>Manage Sevices</span>
           </Link>
-        </li>
-        {/* {isDoctor && <div>
-                    <li>
-                        <Link to="/" className="text-white">
-                            <FontAwesomeIcon icon={faCalendar} /> <span>Appointments</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="" className="text-white">
-                            <FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/" className="text-white">
-                            <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/" className="text-white" >
-                            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/" className="text-white" >
-                            <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
-                        </Link>
-                    </li>
-                </div>} */}
-      </ul>
+        </li> </>
+        }
+        </ul>
       <div>
         <Link to="/" className="text-white">
           <FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span>
