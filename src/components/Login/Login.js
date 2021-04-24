@@ -26,8 +26,7 @@ const Login = () => {
         const { displayName, email } = result.user;
         const signedInUser = { name: displayName, email };
         setLoggedInUser(signedInUser);
-        history.push("/dashboard");
-        // history.replace(from);
+        history.replace(from);
       })
       .catch(function (error) {
         const errorMessage = error.message;
@@ -54,7 +53,7 @@ const Login = () => {
           </div>
           <div className="from-group mt-5">
             <button
-              className="btn btn-brand text-white"
+              className="btn text-white"
               style={{ width: "470px" }}
               onClick={handleGoogleSignIn}
             >

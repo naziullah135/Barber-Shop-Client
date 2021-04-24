@@ -1,11 +1,11 @@
 import React from "react";
-import logo from '../../images/logo.png'
-import './Header.css';
+import logo from "../../images/logo.png";
+import "./Header.css";
 
 const Header = () => {
   return (
     <section id="banner">
-      {/* <img src={logo} className="logo" /> */}
+      <img src={logo} className="logo" />
       <div className="banner-text">
         <h1>Hair Studio</h1>
         <p>Style Your Hair Is Style Is Life </p>
