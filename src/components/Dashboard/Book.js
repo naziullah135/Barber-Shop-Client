@@ -1,20 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../App";
 import { useParams } from "react-router-dom";
-import Payment from "./Payment";
+import { UserContext } from "../../App";
 import "./Book.css";
+import Payment from "./Payment";
 
 const Book = () => {
   const { id } = useParams();
   const [service, setService] = useState([]);
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [loggedInUser] = useContext(UserContext);
   console.log(loggedInUser);
 
   useEffect(() => {
     fetch(`https://peaceful-journey-87547.herokuapp.com/service/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data[0]));
-  }, []);
+  }, [id]);
 
   const submitOrder = () => {
     const newOrder = {

@@ -1,20 +1,18 @@
 import React, { createContext, useState } from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home/Home";
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Login from "./components/Login/Login";
-import NotFound from "./components/NotFound/NotFound";
-import PrivateRoute from "./components/Login/PrivateRoute";
-import Dashboard from "./components/Dashboard/Dashboard";
-import AddService from "./components/Dashboard/AddService";
 import AddReview from "./components/Dashboard/AddReview";
-import Book from "./components/Dashboard/Book";
-import Orders from "./components/Dashboard/Orders";
-import ManageServices from "./components/Dashboard/ManageServices";
-import MakeAdmin from "./components/Dashboard/MakeAdmin";
+import AddService from "./components/Dashboard/AddService";
 import BookList from "./components/Dashboard/BookList";
+import Dashboard from "./components/Dashboard/Dashboard";
+import MakeAdmin from "./components/Dashboard/MakeAdmin";
+import ManageServices from "./components/Dashboard/ManageServices";
+import Orders from "./components/Dashboard/Orders";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import PrivateRoute from "./components/Login/PrivateRoute";
+import NotFound from "./components/NotFound/NotFound";
+
 
 export const UserContext = createContext();
 
@@ -36,27 +34,27 @@ function App() {
           <PrivateRoute path="/dashboard">
             <Dashboard />
           </PrivateRoute>
-          <Route path="/addservice">
+          <PrivateRoute path="/addservice">
             <AddService />
-          </Route>
-          <Route path="/book">
+          </PrivateRoute>
+          <PrivateRoute path="/book">
             <Dashboard />
-          </Route>
-          <Route path="/booking">
+          </PrivateRoute>
+          <PrivateRoute path="/booking">
             <BookList />
-          </Route>
-          <Route path="/addreview">
+          </PrivateRoute>
+          <PrivateRoute path="/addreview">
             <AddReview />
-          </Route>
-          <Route path="/addadmin">
+          </PrivateRoute>
+          <PrivateRoute path="/addadmin">
             <MakeAdmin />
-          </Route>
-          <Route path="/orders">
+          </PrivateRoute>
+          <PrivateRoute path="/orders">
             <Orders />
-          </Route>
-          <Route path="/manageservices">
-            <ManageServices></ManageServices>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/manageservices">
+            <ManageServices />
+          </PrivateRoute>
           <Route path="/login">
             <Login />
           </Route>
