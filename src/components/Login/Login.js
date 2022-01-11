@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from "./firebase.config";
-import { UserContext } from "../../App";
+import React, { useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import LoginBg from "../../images/LoginBg.jpg";
+import { UserContext } from "../../App";
 import GoogleIcon from "../../images/GoogleIcon.png";
+import LoginBg from "../../images/LoginBg.jpg";
+import firebaseConfig from "./firebase.config";
 
 const Login = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [setLoggedInUser] = useContext(UserContext);
   const history = useHistory();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
@@ -54,7 +54,7 @@ const Login = () => {
           <div className="from-group mt-5">
             <button
               className="btn text-white"
-              style={{ width: "470px" }}
+              style={{width: "93%", marginLeft: "3.5%"}}
               onClick={handleGoogleSignIn}
             >
               {" "}
@@ -65,7 +65,7 @@ const Login = () => {
         </div>
         <div className="col-md-6 d-none d-md-block">
           <img
-            style={{ width: "70%", borderRadius: "15px", margin: "80px" }}
+            style={{width: "70%", borderRadius: "15px", margin: "76px" }}
             className="img-fluid"
             src={LoginBg}
             alt=""
